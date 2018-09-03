@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4926D8F0CD6C93FA04F63F0A /* Pods_WCExtensionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0463D372CCA08B3BAA6E5026 /* Pods_WCExtensionsTests.framework */; };
-		7F410366213D47490073EF6C /* StringExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946A57F7F9D3D5D5584EDB4 /* StringExtensionTest.swift */; };
-		7F410368213D4C200073EF6C /* UIImageExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F410367213D4C200073EF6C /* UIImageExtensionTest.swift */; };
+		7F410366213D47490073EF6C /* StringExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */; };
+		7F410368213D4C200073EF6C /* UIImageExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */; };
 		7F41036C213D4F410073EF6C /* vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F41036A213D4F410073EF6C /* vertical.png */; };
 		7F41036D213D4F410073EF6C /* horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F41036B213D4F410073EF6C /* horizontal.png */; };
-		7F410370213D52D40073EF6C /* RegexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41036F213D52D40073EF6C /* RegexTest.swift */; };
+		7F410370213D52D40073EF6C /* Regex.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F41036F213D52D40073EF6C /* Regex.Tests.swift */; };
 		7FD964A6213D0F8B00B7EFC4 /* WCExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD9649C213D0F8A00B7EFC4 /* WCExtensions.framework */; };
 		7FD964B8213D10A200B7EFC4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B6213D10A200B7EFC4 /* StringExtension.swift */; };
 		7FD964B9213D10A200B7EFC4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */; };
@@ -34,12 +34,12 @@
 		0463D372CCA08B3BAA6E5026 /* Pods_WCExtensionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCExtensionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37784087F3E1ADF272FFBE88 /* Pods-WCExtensionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensionsTests/Pods-WCExtensionsTests.release.xcconfig"; sourceTree = "<group>"; };
 		48D3D472FD6FBFDA713956C7 /* Pods-WCExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensions/Pods-WCExtensions.release.xcconfig"; sourceTree = "<group>"; };
-		5946A57F7F9D3D5D5584EDB4 /* StringExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTest.swift; sourceTree = "<group>"; };
+		5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.Tests.swift; sourceTree = "<group>"; };
 		5F78F16E157833D84F80C0BB /* Pods_WCExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F410367213D4C200073EF6C /* UIImageExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionTest.swift; sourceTree = "<group>"; };
+		7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.Tests.swift; sourceTree = "<group>"; };
 		7F41036A213D4F410073EF6C /* vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical.png; sourceTree = "<group>"; };
 		7F41036B213D4F410073EF6C /* horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontal.png; sourceTree = "<group>"; };
-		7F41036F213D52D40073EF6C /* RegexTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTest.swift; sourceTree = "<group>"; };
+		7F41036F213D52D40073EF6C /* Regex.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.Tests.swift; sourceTree = "<group>"; };
 		7FD9649C213D0F8A00B7EFC4 /* WCExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WCExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD964A0213D0F8B00B7EFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD964A5213D0F8B00B7EFC4 /* WCExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +84,7 @@
 		7F41036E213D52AA0073EF6C /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
-				7F41036F213D52D40073EF6C /* RegexTest.swift */,
+				7F41036F213D52D40073EF6C /* Regex.Tests.swift */,
 			);
 			path = Wrappers;
 			sourceTree = "<group>";
@@ -126,8 +126,8 @@
 				7F41036E213D52AA0073EF6C /* Wrappers */,
 				7F410369213D4DFF0073EF6C /* Images */,
 				7FD964AC213D0F8B00B7EFC4 /* Info.plist */,
-				5946A57F7F9D3D5D5584EDB4 /* StringExtensionTest.swift */,
-				7F410367213D4C200073EF6C /* UIImageExtensionTest.swift */,
+				5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */,
+				7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */,
 			);
 			path = WCExtensionsTests;
 			sourceTree = "<group>";
@@ -340,9 +340,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F410370213D52D40073EF6C /* RegexTest.swift in Sources */,
-				7F410366213D47490073EF6C /* StringExtensionTest.swift in Sources */,
-				7F410368213D4C200073EF6C /* UIImageExtensionTest.swift in Sources */,
+				7F410370213D52D40073EF6C /* Regex.Tests.swift in Sources */,
+				7F410366213D47490073EF6C /* StringExtension.Tests.swift in Sources */,
+				7F410368213D4C200073EF6C /* UIImageExtension.Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
