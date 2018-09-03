@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7FD964A6213D0F8B00B7EFC4 /* WCExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FD9649C213D0F8A00B7EFC4 /* WCExtensions.framework */; };
 		7FD964AB213D0F8B00B7EFC4 /* WCExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964AA213D0F8B00B7EFC4 /* WCExtensionsTests.swift */; };
-		7FD964AD213D0F8B00B7EFC4 /* WCExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FD9649F213D0F8B00B7EFC4 /* WCExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FD964B8213D10A200B7EFC4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B6213D10A200B7EFC4 /* String.swift */; };
 		7FD964B9213D10A200B7EFC4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */; };
 		7FD964D7213D139000B7EFC4 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964D6213D139000B7EFC4 /* Regex.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		7FD9649C213D0F8A00B7EFC4 /* WCExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WCExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FD9649F213D0F8B00B7EFC4 /* WCExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCExtensions.h; sourceTree = "<group>"; };
 		7FD964A0213D0F8B00B7EFC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD964A5213D0F8B00B7EFC4 /* WCExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD964AA213D0F8B00B7EFC4 /* WCExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCExtensionsTests.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				7FD964D5213D136A00B7EFC4 /* Wrappers */,
 				7FD964B6213D10A200B7EFC4 /* String.swift */,
 				7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */,
-				7FD9649F213D0F8B00B7EFC4 /* WCExtensions.h */,
 				7FD964A0213D0F8B00B7EFC4 /* Info.plist */,
 			);
 			path = WCExtensions;
@@ -110,7 +107,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD964AD213D0F8B00B7EFC4 /* WCExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
