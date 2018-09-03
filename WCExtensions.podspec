@@ -9,15 +9,15 @@
 Pod::Spec.new do |s|
   s.name         = "WCExtensions"
   s.version      = "0.0.1"
-  s.summary      = "Swift extension for Foundation or UIKit"
+  s.summary      = "Swift extension for Foundation and UIKit"
   s.description  = <<-DESC
-  Swift extension for Foundation or UIKit
+  Swift extension for Foundation, UIKit with helpers and wrappers
                    DESC
   s.homepage     = "https://github.com/guhungry/ios-extension"
   s.license      = "MIT"
   s.author             = { "Woraphot Chokratanasombat" => "guhungry@gmail.com" }
 
-  s.platform     = :ios
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/guhungry/ios-extension.git", :tag => "#{s.version}" }
   s.source_files  = "WCExtensions"
   s.swift_version = "4.2"
