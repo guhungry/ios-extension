@@ -1,0 +1,6 @@
+framework module Pods_WCExtensionsTests {
+  umbrella header "Pods-WCExtensionsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

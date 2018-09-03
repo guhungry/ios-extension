@@ -1,0 +1,6 @@
+framework module Pods_WCExtensions {
+  umbrella header "Pods-WCExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}
