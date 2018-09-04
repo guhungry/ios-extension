@@ -23,6 +23,13 @@ class RegexTest: XCTestCase {
 
         super.tearDown()
     }
+    
+    func testInitMain_ShouldNotThrowError() {
+        sut = Regex("\\d+", options: [])
+        
+        assertThat(sut.matches("Abc"), hasCount(0))
+        assertThat(sut.matches("123"), hasCount(1))
+    }
 
     func testMatchesWithDPLUS_WhenTextISAbc_ShouldEmpty() {
         assertThat(sut.matches("Abc"), hasCount(0))
