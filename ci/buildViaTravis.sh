@@ -10,7 +10,8 @@ elif [ "$TRAVIS_TAG" != "" ]; then
   set -o pipefail
   xcodebuild clean build test -workspace WCExtensions.xcworkspace -scheme WCExtensionsTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPad Air 2,OS=11.0" -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 
-  pod trunk push WCExtensions.podspec
+  pod spec lint
+  pod trunk push
 else
   echo -e 'WARN: Should not be here => Branch ['$TRAVIS_BRANCH']  Tag ['$TRAVIS_TAG']  Pull Request ['$TRAVIS_PULL_REQUEST']'
   set -o pipefail
