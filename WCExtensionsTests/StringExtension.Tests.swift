@@ -22,6 +22,27 @@ class StringExtensionTests: XCTestCase {
     }
 }
 
+class StringToExtensionTests : XCTestCase {
+    var sut: String!
+    
+    func testToInt_WhenIs123_ShouldReturn123() {
+        sut = "123"
+        
+        assertThat(sut.toInt(), equalTo(123))
+    }
+    
+    func testToIntOr_WhenIs456_ShouldReturn456() {
+        sut = "456"
+        
+        assertThat(sut.toInt(), equalTo(456))
+    }
+    
+    func testToIntOr_WhenIsInvalid_ShouldReturnOr() {
+        sut = "Invalid"
+        
+        assertThat(sut.toInt(or: 321), equalTo(321))
+    }
+}
 
 class OptionalStringExtensionTests : XCTestCase {
     var sut: String?

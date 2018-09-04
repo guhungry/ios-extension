@@ -24,3 +24,14 @@ public extension Optional where Wrapped == String {
         return or("")
     }
 }
+
+public extension String {
+    public func toInt() -> Int? {
+        return Int(self)
+    }
+    
+    
+    public func toInt(or: Int) -> Int {
+        return toInt() ?? or
+    }
+}
