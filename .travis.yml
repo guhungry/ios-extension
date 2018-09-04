@@ -8,12 +8,8 @@ before_install:
   - xcpretty --version
   - xcodebuild -version
   - xcodebuild -showsdks
-  - instruments -s devices
 
-script:
-  - set -o pipefail
-
-  - xcodebuild clean build test -workspace WCExtensions.xcworkspace -scheme WCExtensionsTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPad Air 2,OS=11.0" -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
+script: ci/buildViaTravis.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
