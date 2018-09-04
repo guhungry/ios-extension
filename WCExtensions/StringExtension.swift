@@ -18,3 +18,9 @@ public extension String {
         return String(self[start..<end])
     }
 }
+
+public extension Optional where Wrapped == String {
+    public func orEmpty() -> String {
+        return or("")
+    }
+}
