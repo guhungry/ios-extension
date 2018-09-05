@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "WCExtensions"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Swift extension for Foundation and UIKit"
   s.description  = <<-DESC
   Swift extension for Foundation, UIKit with helpers and wrappers
