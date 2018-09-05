@@ -71,3 +71,83 @@ class OptionalStringExtensionTests : XCTestCase {
         assertThat(sut.orEmpty(), equalTo(""))
     }
 }
+
+class StringValidateExtensionTests : XCTestCase {
+    var sut: String!
+
+    func testIsBlank_WhenEmpty_ShouldReturnTrue() {
+        sut = ""
+
+        assertThat(sut.isBlank(), equalTo(true))
+    }
+
+    func testIsBlank_WhenOnlyWhitespaces_ShouldReturnTrue() {
+        sut = "       "
+
+        assertThat(sut.isBlank(), equalTo(true))
+    }
+
+    func testIsBlank_WhenHasValue_ShouldReturnFalse() {
+        sut = "    fda   "
+
+        assertThat(sut.isBlank(), equalTo(false))
+    }
+}
+
+class StringOptionalValidateExtensionTests : XCTestCase {
+    var sut: String?
+
+    func testIsNull_WhenOptional_ShouldReturnTrue() {
+        sut = nil
+
+        assertThat(sut.isNull(), equalTo(true))
+    }
+
+    func testIsNull_WhenIsString_ShouldReturnFalse() {
+        sut = ""
+
+        assertThat(sut.isNull(), equalTo(false))
+    }
+
+    func testIsNullOrEmpty_WhenOptional_ShouldReturnTrue() {
+        sut = nil
+
+        assertThat(sut.isNullOrEmpty(), equalTo(true))
+    }
+
+    func testIsNullOrEmpty_WhenEmpty_ShouldReturnTrue() {
+        sut = ""
+
+        assertThat(sut.isNullOrEmpty(), equalTo(true))
+    }
+
+    func testIsNullOrEmpty_WhenHasValue_ShouldReturnFalse() {
+        sut = "fdsafds"
+
+        assertThat(sut.isNullOrEmpty(), equalTo(false))
+    }
+
+    func testIsNullOrBlank_WhenOptional_ShouldReturnTrue() {
+        sut = nil
+
+        assertThat(sut.isNullOrBlank(), equalTo(true))
+    }
+
+    func testIsNullOrBlank_WhenEmpty_ShouldReturnTrue() {
+        sut = ""
+
+        assertThat(sut.isNullOrBlank(), equalTo(true))
+    }
+
+    func testIsNullOrBlank_WhenOnlyWhitespaces_ShouldReturnTrue() {
+        sut = "       "
+
+        assertThat(sut.isNullOrBlank(), equalTo(true))
+    }
+
+    func testIsNullOrBlank_WhenHasValue_ShouldReturnFalse() {
+        sut = "   da    "
+
+        assertThat(sut.isNullOrBlank(), equalTo(false))
+    }
+}

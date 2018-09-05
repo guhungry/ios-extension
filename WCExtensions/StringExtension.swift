@@ -23,6 +23,24 @@ public extension Optional where Wrapped == String {
     public func orEmpty() -> String {
         return or("")
     }
+
+    public func isNull() -> Bool {
+        return self == nil
+    }
+
+    public func isNullOrEmpty() -> Bool {
+        return isNull() || self!.isEmpty
+    }
+
+    public func isNullOrBlank() -> Bool {
+        return isNull() || self!.isBlank()
+    }
+}
+
+public extension String {
+    public func isBlank() -> Bool {
+        return trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
+    }
 }
 
 public extension String {
