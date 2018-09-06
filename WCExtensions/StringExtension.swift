@@ -20,20 +20,14 @@ public extension String {
 }
 
 public extension Optional where Wrapped == String {
-    public func orEmpty() -> String {
-        return or("")
-    }
-
-    public func isNull() -> Bool {
-        return self == nil
-    }
-
-    public func isNullOrEmpty() -> Bool {
-        return isNull() || self!.isEmpty
-    }
-
     public func isNullOrBlank() -> Bool {
-        return isNull() || self!.isBlank()
+        return self == nil || self!.isBlank()
+    }
+}
+
+public extension Optional where Wrapped == String {
+    public func orEmpty() -> String {
+        return self ?? ""
     }
 }
 

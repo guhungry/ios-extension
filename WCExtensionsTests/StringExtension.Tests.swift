@@ -150,4 +150,16 @@ class StringOptionalValidateExtensionTests : XCTestCase {
 
         assertThat(sut.isNullOrBlank(), equalTo(false))
     }
+    
+    func testOrEmpty_WhenOptional_ShouldReturnEmpty() {
+        sut = nil
+        
+        assertThat(sut.orEmpty(), equalTo(""))
+    }
+    
+    func testOrEmpty_WhenHasValue_ShouldReturnValue() {
+        sut = "HAHAHA"
+        
+        assertThat(sut.orEmpty(), equalTo("HAHAHA"))
+    }
 }

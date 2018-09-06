@@ -23,6 +23,7 @@
 		7FD964B8213D10A200B7EFC4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B6213D10A200B7EFC4 /* StringExtension.swift */; };
 		7FD964B9213D10A200B7EFC4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */; };
 		7FD964D7213D139000B7EFC4 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD964D6213D139000B7EFC4 /* Regex.swift */; };
+		CCBA40B721418D3F009A610A /* CollectionOptionalExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBA40B621418D3F009A610A /* CollectionOptionalExtension.Tests.swift */; };
 		EB9E6E6C53EB89FD45F8DFEA /* Pods_WCExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F78F16E157833D84F80C0BB /* Pods_WCExtensions.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		7FD964B6213D10A200B7EFC4 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		7FD964D6213D139000B7EFC4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		CCBA40B621418D3F009A610A /* CollectionOptionalExtension.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionOptionalExtension.Tests.swift; sourceTree = "<group>"; };
 		E3C5B95DE6D2B0FF5302BF59 /* Pods-WCExtensionsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensionsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensionsTests/Pods-WCExtensionsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF1337006744241E5D6BC39A /* Pods-WCExtensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensions/Pods-WCExtensions.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				7F410369213D4DFF0073EF6C /* Images */,
 				7F41036E213D52AA0073EF6C /* Wrappers */,
 				7F689654213E3E87008566A1 /* CollectionExtension.Tests.swift */,
+				CCBA40B621418D3F009A610A /* CollectionOptionalExtension.Tests.swift */,
 				5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */,
 				7F689656213E604F008566A1 /* OptionalExtension.Tests.swift */,
 				5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */,
@@ -366,6 +369,7 @@
 				7F410366213D47490073EF6C /* StringExtension.Tests.swift in Sources */,
 				7F410368213D4C200073EF6C /* UIImageExtension.Tests.swift in Sources */,
 				7F689655213E3E87008566A1 /* CollectionExtension.Tests.swift in Sources */,
+				CCBA40B721418D3F009A610A /* CollectionOptionalExtension.Tests.swift in Sources */,
 				5946A1DB12AA364DAB8FB2E4 /* ObjectExtension.Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

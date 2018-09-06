@@ -33,4 +33,14 @@ public extension Collection {
         for element in self { if (predicate(element)) { return true } }
         return false
     }
+    
+    func toArray() -> [Element] {
+        return self.map { $0 }
+    }
+}
+
+public extension Optional where Wrapped : Collection {
+    public func toArray() -> [Wrapped.Iterator.Element] {
+        return self?.toArray() ?? []
+    }
 }
