@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4926D8F0CD6C93FA04F63F0A /* Pods_WCExtensionsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0463D372CCA08B3BAA6E5026 /* Pods_WCExtensionsTests.framework */; };
+		5946A1DB12AA364DAB8FB2E4 /* ObjectExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */; };
 		5946A6775BBA5BC229F608CE /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946AE65CA1B55D936E1E822 /* OptionalExtension.swift */; };
+		5946AD9AE8C0FBA08E9EADD8 /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946AD80BFCB29A9B28A3925 /* ObjectExtension.swift */; };
 		7F410366213D47490073EF6C /* StringExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */; };
 		7F410368213D4C200073EF6C /* UIImageExtension.Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */; };
 		7F41036C213D4F410073EF6C /* vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F41036A213D4F410073EF6C /* vertical.png */; };
@@ -38,7 +40,9 @@
 		0463D372CCA08B3BAA6E5026 /* Pods_WCExtensionsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCExtensionsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37784087F3E1ADF272FFBE88 /* Pods-WCExtensionsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensionsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensionsTests/Pods-WCExtensionsTests.release.xcconfig"; sourceTree = "<group>"; };
 		48D3D472FD6FBFDA713956C7 /* Pods-WCExtensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WCExtensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-WCExtensions/Pods-WCExtensions.release.xcconfig"; sourceTree = "<group>"; };
+		5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectExtension.Tests.swift; sourceTree = "<group>"; };
 		5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.Tests.swift; sourceTree = "<group>"; };
+		5946AD80BFCB29A9B28A3925 /* ObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
 		5946AE65CA1B55D936E1E822 /* OptionalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 		5F78F16E157833D84F80C0BB /* Pods_WCExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WCExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.Tests.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			children = (
 				7FD964D5213D136A00B7EFC4 /* Wrappers */,
 				7F689652213E3AA0008566A1 /* CollectionExtension.swift */,
+				5946AD80BFCB29A9B28A3925 /* ObjectExtension.swift */,
 				5946AE65CA1B55D936E1E822 /* OptionalExtension.swift */,
 				7FD964B6213D10A200B7EFC4 /* StringExtension.swift */,
 				7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */,
@@ -133,13 +138,14 @@
 		7FD964A9213D0F8B00B7EFC4 /* WCExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F41036E213D52AA0073EF6C /* Wrappers */,
 				7F410369213D4DFF0073EF6C /* Images */,
-				7FD964AC213D0F8B00B7EFC4 /* Info.plist */,
+				7F41036E213D52AA0073EF6C /* Wrappers */,
 				7F689654213E3E87008566A1 /* CollectionExtension.Tests.swift */,
+				5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */,
 				7F689656213E604F008566A1 /* OptionalExtension.Tests.swift */,
 				5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */,
 				7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */,
+				7FD964AC213D0F8B00B7EFC4 /* Info.plist */,
 			);
 			path = WCExtensionsTests;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				7FD964D7213D139000B7EFC4 /* Regex.swift in Sources */,
 				7F689653213E3AA0008566A1 /* CollectionExtension.swift in Sources */,
 				5946A6775BBA5BC229F608CE /* OptionalExtension.swift in Sources */,
+				5946AD9AE8C0FBA08E9EADD8 /* ObjectExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +366,7 @@
 				7F410366213D47490073EF6C /* StringExtension.Tests.swift in Sources */,
 				7F410368213D4C200073EF6C /* UIImageExtension.Tests.swift in Sources */,
 				7F689655213E3E87008566A1 /* CollectionExtension.Tests.swift in Sources */,
+				5946A1DB12AA364DAB8FB2E4 /* ObjectExtension.Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,4 +40,46 @@ class CollectionExtension: XCTestCase {
             assertThat(index, equalTo(value))
         }
     }
+
+    func testAny_WhenEmpty_ShouldReturnFalse() {
+        assertThat([].any { return false }, equalTo(false))
+        assertThat([].any { return true }, equalTo(false))
+    }
+
+    func testAny_WhenPredicateAllFalse_ShouldReturnFalse() {
+        assertThat([0, 3, 6].any { _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].any { return $0 == 5 }, equalTo(false))
+        assertThat([0].any { return $0 == 5 }, equalTo(false))
+    }
+
+    func testAny_WhenPredicateSomeTrue_ShouldReturnTrue() {
+        assertThat([0, 3, 6, 5].any { return $0 == 5 }, equalTo(true))
+        assertThat([3, 5, 2, 3].any { return $0 == 5 }, equalTo(true))
+        assertThat([5, 1, 2, 3].any { return $0 == 5 }, equalTo(true))
+        assertThat([5, 1, 2, 3].any { _ in return true }, equalTo(true))
+    }
+
+    func testAll_WhenEmpty_ShouldReturnFalse() {
+        assertThat([].all { return false }, equalTo(true))
+        assertThat([].all { return true }, equalTo(true))
+    }
+
+    func testAll_WhenPredicateAllFalse_ShouldReturnFalse() {
+        assertThat([0, 3, 6].all { _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].all { return $0 == 5 }, equalTo(false))
+        assertThat([0].all { return $0 == 5 }, equalTo(false))
+    }
+
+    func testAll_WhenPredicateSomeTrue_ShouldReturnFalse() {
+        assertThat([0, 3, 6, 5].all { return $0 == 5 }, equalTo(false))
+        assertThat([3, 5, 2, 3].all { return $0 < 5 }, equalTo(false))
+        assertThat([5, 1, 2, 3].all { return $0 > 2 }, equalTo(false))
+        assertThat([5, 1, 2, 3].all { _ in return true }, equalTo(true))
+    }
+
+    func testAll_WhenPredicateAllTrue_ShouldReturnTrue() {
+        assertThat([1, 3, 6, 5].all { return $0 > 0 }, equalTo(true))
+        assertThat([3, 5, 2, 3].all { return $0 < 6 }, equalTo(true))
+        assertThat([5, 1, 2, 3].all { _ in return true }, equalTo(true))
+    }
 }
