@@ -15,7 +15,7 @@ class CollectionExtension: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
+
         sut = [0, 1, 2, 3]
     }
     
@@ -35,10 +35,18 @@ class CollectionExtension: XCTestCase {
         assertThat(sut.getOrNull(10), equalTo(nil))
     }
     
-    func testForEachIndex_ShouldGiveCorrect_Value() {
+    func testForEachIndexed_ShouldGiveCorrect_Value() {
         sut.forEachIndexed { (index, value) in
             assertThat(index, equalTo(value))
         }
+    }
+    
+    func testMapIndexed_ShouldCallWithCorrectIndex() {
+        let actual = sut.mapIndexed { (index, item) in
+            return item + index
+        }
+        
+        assertThat(actual, equalTo([0, 2, 4, 6]))
     }
 
     func testAny_WhenEmpty_ShouldReturnFalse() {

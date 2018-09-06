@@ -17,9 +17,11 @@ public extension Collection where Index == Int {
 
 public extension Collection {
     public func forEachIndexed(_ action: (Int, Element) -> Void) {
-        for (index, element) in lazy.enumerated() {
-            action(index, element)
-        }
+        enumerated().forEach(action)
+    }
+    
+    public func mapIndexed<R>(_ transform: (Int, Element) -> R) -> [R] {
+        return enumerated().map(transform)
     }
 
     public func all(_ predicate: (Element) -> Bool) -> Bool {
