@@ -49,6 +49,22 @@ class CollectionExtension: XCTestCase {
         assertThat(actual, equalTo([0, 2, 4, 6]))
     }
 
+    func testFirstIndexed_ShouldReturnCorrectPair() {
+        sut = [0, 2, 4, 6]
+        let actual = (sut.firstIndexed { (index, item) in return item == 4 })
+
+        assertThat(actual?.0, equalTo(2))
+        assertThat(actual?.1, equalTo(4))
+    }
+
+    func testFirstIndexed_ShouldReturnNil() {
+        sut = [0, 2, 4, 6]
+        let actual = (sut.firstIndexed { (index, item) in return item > 8 })
+
+        assertThat(actual?.0, equalTo(nil))
+        assertThat(actual?.1, equalTo(nil))
+    }
+
     func testAny_WhenEmpty_ShouldReturnFalse() {
         assertThat([].any { return false }, equalTo(false))
         assertThat([].any { return true }, equalTo(false))

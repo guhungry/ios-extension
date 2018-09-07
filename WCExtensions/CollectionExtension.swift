@@ -24,6 +24,10 @@ public extension Collection {
         return enumerated().map(transform)
     }
 
+    public func firstIndexed(_ predicate: (Int, Element) -> Bool) -> (offset: Int, element: Element)? {
+        return enumerated().first(where: predicate)
+    }
+
     public func all(_ predicate: (Element) -> Bool) -> Bool {
         for element in self { if (!predicate(element)) { return false } }
         return true
