@@ -6,8 +6,8 @@
 import Foundation
 
 /// Kotlinize
-protocol KotlinApply {}
-extension KotlinApply {
+public protocol KotlinApply {}
+public extension KotlinApply {
     func apply(_ block: (Self) -> Void) -> Self {
         block(self)
         return self
