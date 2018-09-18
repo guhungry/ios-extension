@@ -65,6 +65,36 @@ class CollectionExtension: XCTestCase {
         assertThat(actual?.1, equalTo(nil))
     }
 
+    func testFilterIndexed_WhenAllFalse_ShouldReturnEmpty() {
+        sut = [0, 2, 4, 6]
+        let actual = sut.filterIndexed { (index, item) in return item > 8 }
+
+        assertThat(actual, hasCount(0))
+    }
+
+    func testFilterIndexed_WhenAll1True_ShouldReturn1Items() {
+        sut = [0, 2, 4, 6]
+        let actual = sut.filterIndexed { (index, item) in return item == 2 }
+        let item = actual[0]
+
+        assertThat(actual, hasCount(1))
+        assertThat(item.offset, equalTo(1))
+        assertThat(item.element, equalTo(2))
+    }
+
+    func testFilterIndexed_WhenAllManyTrue_ShouldReturnEqualThat() {
+        sut = [0, 2, 4, 6]
+        let actual = sut.filterIndexed { (index, item) in return item > 2 }
+
+        assertThat(actual, hasCount(2))
+        var item = actual[0]
+        assertThat(item.offset, equalTo(2))
+        assertThat(item.element, equalTo(4))
+        item = actual[1]
+        assertThat(item.offset, equalTo(3))
+        assertThat(item.element, equalTo(6))
+    }
+
     func testAny_WhenEmpty_ShouldReturnFalse() {
         assertThat([].any { return false }, equalTo(false))
         assertThat([].any { return true }, equalTo(false))

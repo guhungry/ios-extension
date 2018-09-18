@@ -28,6 +28,10 @@ public extension Collection {
         return enumerated().first(where: predicate)
     }
 
+    public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
+        return enumerated().filter(predicate)
+    }
+
     public func all(_ predicate: (Element) -> Bool) -> Bool {
         for element in self { if (!predicate(element)) { return false } }
         return true
