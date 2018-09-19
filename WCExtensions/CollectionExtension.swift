@@ -33,12 +33,20 @@ public extension Collection {
     }
 
     public func all(_ predicate: (Element) -> Bool) -> Bool {
-        for element in self { if (!predicate(element)) { return false } }
+        for element in self {
+            if (!predicate(element)) {
+                return false
+            }
+        }
         return true
     }
 
     public func any(_ predicate: (Element) -> Bool) -> Bool {
-        for element in self { if (predicate(element)) { return true } }
+        for element in self {
+            if (predicate(element)) {
+                return true
+            }
+        }
         return false
     }
     

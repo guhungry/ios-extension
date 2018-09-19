@@ -1,6 +1,12 @@
 language: objective-c
 osx_image: xcode9.4
 
+addons:
+  sonarcloud:
+    organization: "guhungry-github"
+    token:
+      secure: "ezfX0lq3M39hbtY9ag1UbR4K6U8cQwUlx0lF4wyhIFodKGUW3QOY8OM340S2OYTSJiV8C9Giyh+M9zYXL9VFvJeTPByhre+tsZoF24YzNOtPLM9pBoUKlV8SUkBoxIQY7UFsBxdI9gXSpQlrUVxwskzsUr5rGWaqGSdW/lBWp3efWIemIYLm662GTWpVMTv9tCuWRDWnpov9ZAR547ot+l92BwnJJnWUYgZTBsLwJSCT63Zeqi2WA2hvWCvx/uhRs7/+mNuhIweG+rbIGTFKdTh+tHcbYig8AkFwGILQ1pjRWXTgKvD1+5oA8TEiwJACKHNhmM2U+7ErVJ5tmqAGhFUwGyXvvkkpprYoFCIUDIdphEb4+/nH/CqacgIwFhdWvbEnKme8gU1KI6Pe4yIqqIApm+SbqDr4N+frc6GX002UJ14Orib86XqQt+JqVx9M/T7WycSHHwQggvd3kFwPxcMH4h9dVDI0U/u6Y+BrRKFuoFlAWOX9pyYs2gU4tmQkRYdwc2nVsccVq679BAFWk/1DCd8ldp8GBBfwCJSNlnBdG8LmCtmtFftVwRV5wJSY5H68G5tKzmo4AsCUdHXewPaJGj+0RdVDdm8llq2RIVjVcN/q7QmxYsSqY7Q2Zqd7I3go//3w5APdPrbrwQ9OvlkDsbh76sdlwCHIKv3fs5g="
+
 before_install:
   - env
   - locale
@@ -10,11 +16,13 @@ before_install:
   - xcodebuild -version
   - xcodebuild -showsdks
 
-script: ci/buildViaTravis.sh
+script:
+  - ci/buildViaTravis.sh
+  - sonar-scanner
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
 env:
   global:
-    secure: lLdhsSPyAPxGMkPA/9ZIFwKIgIhQuHuHPxsXZkfG3cRj3SbESIHQXzEAzWGIB/wH3SIjCJjAlHBVxyrvPhNHOHPj9bPNpvJzcHs1Zhh7L5ooRRI8aQikVpiziONXgrimzE99Pu88s+jk7V+dp08I8H8xzsHclZrlOkCUq+IatEMsyBm+bgBJKxYe8FBd7Acr2AHIdPc88NboLIRbz0NPf/wCpL8HVt1l1DYXL1aAEqmAxbHZyyEA0AYQG/VVMT/CPkZHNy+igeLYyHswRizT0OII747HKEhRdLTGgNviKbbQPRclhvUD0Jxr6RFk2R/Y1Fhz25/N9dl1UirSHmRbTGESTjQIvKxdqIm+1JpckwglSpWYBFI3/hI4+i3tnugWoy9U54cM9QrdYlwfwM8gc3/KXkSh8b2kS+QKfKo55WFGxrQmn/foM0qv3g/IsJnJX3xoumwmz3wD8QcCgm1TvU1VcMWKsMLBn0OAasVEBZ+8PsWyRZHViewqKuxsEzhjqsdYNe41Z8VQfKpm4Nk4TrDr/OnWQv8+v93qI0pqs0JzBcgzKTvNHIv5WSXfAt2gkIXlkndXOqOlAH4aP470V4g1ail0bmulxCwd84VfbfJuKC35dWTRnPWpno7Y+gFHCX9GGoQnzuj6UbEvjDnQ8XyGw0gyGTR0qVzuoi9ifQw=
+  - secure: lLdhsSPyAPxGMkPA/9ZIFwKIgIhQuHuHPxsXZkfG3cRj3SbESIHQXzEAzWGIB/wH3SIjCJjAlHBVxyrvPhNHOHPj9bPNpvJzcHs1Zhh7L5ooRRI8aQikVpiziONXgrimzE99Pu88s+jk7V+dp08I8H8xzsHclZrlOkCUq+IatEMsyBm+bgBJKxYe8FBd7Acr2AHIdPc88NboLIRbz0NPf/wCpL8HVt1l1DYXL1aAEqmAxbHZyyEA0AYQG/VVMT/CPkZHNy+igeLYyHswRizT0OII747HKEhRdLTGgNviKbbQPRclhvUD0Jxr6RFk2R/Y1Fhz25/N9dl1UirSHmRbTGESTjQIvKxdqIm+1JpckwglSpWYBFI3/hI4+i3tnugWoy9U54cM9QrdYlwfwM8gc3/KXkSh8b2kS+QKfKo55WFGxrQmn/foM0qv3g/IsJnJX3xoumwmz3wD8QcCgm1TvU1VcMWKsMLBn0OAasVEBZ+8PsWyRZHViewqKuxsEzhjqsdYNe41Z8VQfKpm4Nk4TrDr/OnWQv8+v93qI0pqs0JzBcgzKTvNHIv5WSXfAt2gkIXlkndXOqOlAH4aP470V4g1ail0bmulxCwd84VfbfJuKC35dWTRnPWpno7Y+gFHCX9GGoQnzuj6UbEvjDnQ8XyGw0gyGTR0qVzuoi9ifQw=

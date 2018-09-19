@@ -10,8 +10,8 @@ public extension Optional {
         return self == nil
     }
     
-    public func or(_ default: Wrapped) -> Wrapped {
-        return self ?? `default`
+    public func or(_ other: Wrapped) -> Wrapped {
+        return self ?? other
     }
 }
 
