@@ -97,58 +97,40 @@ class StringValidateExtensionTests : XCTestCase {
 class StringOptionalValidateExtensionTests : XCTestCase {
     var sut: String?
 
-    func testIsNull_WhenOptional_ShouldReturnTrue() {
+    func testIsNil_WhenOptional_ShouldReturnTrue() {
         sut = nil
 
-        assertThat(sut.isNull(), equalTo(true))
+        assertThat(sut.isNil(), equalTo(true))
     }
 
-    func testIsNull_WhenIsString_ShouldReturnFalse() {
+    func testIsNil_WhenIsString_ShouldReturnFalse() {
         sut = ""
 
-        assertThat(sut.isNull(), equalTo(false))
+        assertThat(sut.isNil(), equalTo(false))
     }
 
-    func testIsNullOrEmpty_WhenOptional_ShouldReturnTrue() {
+    func testIsNilOrBlank_WhenOptional_ShouldReturnTrue() {
         sut = nil
 
-        assertThat(sut.isNullOrEmpty(), equalTo(true))
+        assertThat(sut.isNilOrBlank(), equalTo(true))
     }
 
-    func testIsNullOrEmpty_WhenEmpty_ShouldReturnTrue() {
+    func testIsNilOrBlank_WhenEmpty_ShouldReturnTrue() {
         sut = ""
 
-        assertThat(sut.isNullOrEmpty(), equalTo(true))
+        assertThat(sut.isNilOrBlank(), equalTo(true))
     }
 
-    func testIsNullOrEmpty_WhenHasValue_ShouldReturnFalse() {
-        sut = "fdsafds"
-
-        assertThat(sut.isNullOrEmpty(), equalTo(false))
-    }
-
-    func testIsNullOrBlank_WhenOptional_ShouldReturnTrue() {
-        sut = nil
-
-        assertThat(sut.isNullOrBlank(), equalTo(true))
-    }
-
-    func testIsNullOrBlank_WhenEmpty_ShouldReturnTrue() {
-        sut = ""
-
-        assertThat(sut.isNullOrBlank(), equalTo(true))
-    }
-
-    func testIsNullOrBlank_WhenOnlyWhitespaces_ShouldReturnTrue() {
+    func testIsNilOrBlank_WhenOnlyWhitespaces_ShouldReturnTrue() {
         sut = "       "
 
-        assertThat(sut.isNullOrBlank(), equalTo(true))
+        assertThat(sut.isNilOrBlank(), equalTo(true))
     }
 
-    func testIsNullOrBlank_WhenHasValue_ShouldReturnFalse() {
+    func testIsNilOrBlank_WhenHasValue_ShouldReturnFalse() {
         sut = "   da    "
 
-        assertThat(sut.isNullOrBlank(), equalTo(false))
+        assertThat(sut.isNilOrBlank(), equalTo(false))
     }
     
     func testOrEmpty_WhenOptional_ShouldReturnEmpty() {

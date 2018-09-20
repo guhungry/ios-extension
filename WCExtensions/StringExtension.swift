@@ -20,7 +20,7 @@ public extension String {
 }
 
 public extension Optional where Wrapped == String {
-    public func isNullOrBlank() -> Bool {
+    public func isNilOrBlank() -> Bool {
         return self == nil || self!.isBlank()
     }
 }

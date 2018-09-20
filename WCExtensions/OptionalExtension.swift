@@ -6,17 +6,11 @@
 import Foundation
 
 public extension Optional {
-    public func isNull() -> Bool {
+    public func isNil() -> Bool {
         return self == nil
     }
     
     public func or(_ other: Wrapped) -> Wrapped {
         return self ?? other
-    }
-}
-
-public extension Optional where Wrapped: Collection {
-    public func isNullOrEmpty() -> Bool {
-        return isNull() || self!.isEmpty
     }
 }

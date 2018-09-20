@@ -25,14 +25,14 @@ class CollectionExtension: XCTestCase {
         super.tearDown()
     }
 
-    func testGetOrNull_AtExistedPosition_ShouldReturnCorrectElement() {
-        assertThat(sut.getOrNull(0), equalTo(0))
-        assertThat(sut.getOrNull(3), equalTo(3))
+    func testGetOrNil_AtExistedPosition_ShouldReturnCorrectElement() {
+        assertThat(sut.getOrNil(0), equalTo(0))
+        assertThat(sut.getOrNil(3), equalTo(3))
     }
 
-    func testGetOrNull_AtUnexistedPosition_ShouldReturnCorrectElement() {
-        assertThat(sut.getOrNull(4), equalTo(nil))
-        assertThat(sut.getOrNull(10), equalTo(nil))
+    func testGetOrNil_AtUnexistedPosition_ShouldReturnCorrectElement() {
+        assertThat(sut.getOrNil(4), equalTo(nil))
+        assertThat(sut.getOrNil(10), equalTo(nil))
     }
     
     func testForEachIndexed_ShouldGiveCorrect_Value() {

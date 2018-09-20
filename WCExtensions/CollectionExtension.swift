@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Collection where Index == Int {
-    public func getOrNull(_ position: Int) -> Element?  {
+    public func getOrNil(_ position: Int) -> Element?  {
         guard position < count else { return nil }
         return self[position]
     }
@@ -60,6 +60,12 @@ public extension Collection {
     
     public var isNotEmpty: Bool {
         return !isEmpty
+    }
+}
+
+public extension Optional where Wrapped: Collection {
+    public func isNilOrEmpty() -> Bool {
+        return isNil() || self!.isEmpty
     }
 }
 
