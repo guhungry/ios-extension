@@ -29,7 +29,26 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7FD964A4213D0F8B00B7EFC4"
+               BuildableName = "WCExtensionsTests.xctest"
+               BlueprintName = "WCExtensionsTests"
+               ReferencedContainer = "container:WCExtensions.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7FD9649B213D0F8A00B7EFC4"
+            BuildableName = "WCExtensions.framework"
+            BlueprintName = "WCExtensions"
+            ReferencedContainer = "container:WCExtensions.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,6 +80,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7FD9649B213D0F8A00B7EFC4"
+            BuildableName = "WCExtensions.framework"
+            BlueprintName = "WCExtensions"
+            ReferencedContainer = "container:WCExtensions.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
