@@ -15,6 +15,9 @@ public extension Collection where Index == Int {
     }
 }
 
+////////
+/// Loop
+////////
 public extension Collection {
     public func forEachIndexed(_ action: (Int, Element) -> Void) {
         enumerated().forEach(action)
@@ -31,7 +34,12 @@ public extension Collection {
     public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter(predicate)
     }
+}
 
+////////////
+/// Validate
+////////////
+public extension Collection {
     public func all(_ predicate: (Element) -> Bool) -> Bool {
         for element in self {
             if (!predicate(element)) {
@@ -40,7 +48,7 @@ public extension Collection {
         }
         return true
     }
-
+    
     public func any(_ predicate: (Element) -> Bool) -> Bool {
         for element in self {
             if (predicate(element)) {
@@ -50,6 +58,15 @@ public extension Collection {
         return false
     }
     
+    public var isNotEmpty: Bool {
+        return !isEmpty
+    }
+}
+
+////////////////
+/// Type Convert
+////////////////
+public extension Collection {
     func toArray() -> [Element] {
         return self.map { $0 }
     }
