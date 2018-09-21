@@ -58,6 +58,15 @@ public extension Collection {
         return false
     }
 
+    public func allIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
+        for element in enumerated() {
+            if (!predicate(element.offset, element.element)) {
+                return false
+            }
+        }
+        return true
+    }
+
     public func anyIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
         for element in enumerated() {
             if (predicate(element.offset, element.element)) {
