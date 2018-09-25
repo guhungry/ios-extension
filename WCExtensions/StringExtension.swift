@@ -20,8 +20,8 @@ public extension String {
 }
 
 public extension String {
-    public func format(args: String...) -> String {
-        return String(format: self, args)
+    public func format(args: CVarArg...) -> String {
+        return String(format: self, arguments: args)
     }
 }
 

@@ -22,6 +22,14 @@ class StringExtensionTests: XCTestCase {
     }
 }
 
+class StringFormatExtensionTests: XCTestCase {
+    var sut: String!
+    
+    func testFormat_ShouldFormatCorrectly() {
+        assertThat("%@ %d %f".format(args: "bee", 3, 2.0), equalTo("bee 3 2.000000"))
+    }
+}
+
 class StringToExtensionTests : XCTestCase {
     var sut: String!
     
