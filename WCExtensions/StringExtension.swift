@@ -35,6 +35,10 @@ public extension String {
     public func isBlank() -> Bool {
         return trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
     }
+
+    public func isNotBlank() -> Bool {
+        return !isBlank()
+    }
 }
 
 public extension String {
