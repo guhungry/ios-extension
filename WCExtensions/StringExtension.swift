@@ -19,6 +19,12 @@ public extension String {
     }
 }
 
+public extension String {
+    public func format(args: String...) -> String {
+        return String(format: self, args)
+    }
+}
+
 public extension Optional where Wrapped == String {
     public func isNilOrBlank() -> Bool {
         return self == nil || self!.isBlank()
