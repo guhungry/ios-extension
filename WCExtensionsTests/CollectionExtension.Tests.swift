@@ -30,9 +30,19 @@ class CollectionExtension: XCTestCase {
         assertThat(sut.getOrNil(3), equalTo(3))
     }
 
-    func testGetOrNil_AtUnexistedPosition_ShouldReturnCorrectElement() {
+    func testGetOrNil_AtUnexistedPosition_ShouldReturnNil() {
         assertThat(sut.getOrNil(4), equalTo(nil))
         assertThat(sut.getOrNil(10), equalTo(nil))
+    }
+    
+    func testGetOrElse_AtExistedPosition_ShouldReturnCorrectElement() {
+        assertThat(sut.getOr(2, else: 1), equalTo(2))
+        assertThat(sut.getOr(1, else: 2), equalTo(1))
+    }
+    
+    func testGetOrElse_AtUnexistedPosition_ShouldReturnElse() {
+        assertThat(sut.getOr(5, else: 1), equalTo(1))
+        assertThat(sut.getOr(8, else: 2), equalTo(2))
     }
     
     func testForEachIndexed_ShouldGiveCorrect_Value() {
