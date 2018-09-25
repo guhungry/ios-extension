@@ -35,9 +35,16 @@ public extension Collection {
     public func firstIndexed(_ predicate: (Int, Element) -> Bool) -> (offset: Int, element: Element)? {
         return enumerated().first(where: predicate)
     }
-
+    
     public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter(predicate)
+    }
+
+    public func reduceIndexed<Result>(initial: Result, reducer: (Result, Int, Element) -> Result) -> Result {
+        return enumerated().reduce(initial, { acc, element -> Result in
+            let (offset, element) = element
+            return reducer(acc, offset, element)
+        })
     }
 }
 

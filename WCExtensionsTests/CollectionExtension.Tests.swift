@@ -94,4 +94,29 @@ class CollectionExtension: XCTestCase {
         assertThat(item.offset, equalTo(3))
         assertThat(item.element, equalTo(6))
     }
+    
+    func testReduceIndexed_ShouldLoopWithCorrectValue() {
+        sut = [0, 2, 4, 6]
+        
+        var actual = sut.reduceIndexed(initial: 0) { acc, index, element -> Int in
+            return acc + index
+        }
+        assertThat(actual, equalTo(6))
+        actual = sut.reduceIndexed(initial: 3) { acc, index, element -> Int in
+            return acc + index
+        }
+        assertThat(actual, equalTo(9))
+        actual = sut.reduceIndexed(initial: 0) { acc, index, element -> Int in
+            return acc + element
+        }
+        assertThat(actual, equalTo(12))
+        actual = sut.reduceIndexed(initial: 2) { acc, index, element -> Int in
+            return acc + element
+        }
+        assertThat(actual, equalTo(14))
+        actual = sut.reduceIndexed(initial: 1) { acc, index, element -> Int in
+            return acc + element + index
+        }
+        assertThat(actual, equalTo(19))
+    }
 }
