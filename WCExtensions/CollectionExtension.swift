@@ -13,6 +13,11 @@ public extension Collection where Index == Int {
         guard position < count else { return nil }
         return self[position]
     }
+
+    public func getOr(_ position: Int, else defaultValue: Element) -> Element  {
+        guard position < count else { return defaultValue }
+        return self[position]
+    }
 }
 
 ////////
