@@ -100,6 +100,24 @@ class StringValidateExtensionTests : XCTestCase {
 
         assertThat(sut.isBlank(), equalTo(false))
     }
+
+    func testIsNotBlank_WhenEmpty_ShouldReturnTrue() {
+        sut = ""
+
+        assertThat(sut.isNotBlank(), equalTo(false))
+    }
+
+    func testIsNotBlank_WhenOnlyWhitespaces_ShouldReturnTrue() {
+        sut = "       "
+
+        assertThat(sut.isNotBlank(), equalTo(false))
+    }
+
+    func testIsNotBlank_WhenHasValue_ShouldReturnFalse() {
+        sut = "    fda   "
+
+        assertThat(sut.isNotBlank(), equalTo(true))
+    }
 }
 
 class StringOptionalValidateExtensionTests : XCTestCase {
