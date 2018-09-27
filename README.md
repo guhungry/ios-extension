@@ -41,7 +41,7 @@ import WCExtensions
 [1, 3, 5].isNotEmpty // true
 
 // Optional
-val optional: [Int]? = nil
+let optional: [Int]? = nil
 optional.isNilOrEmpty() // true
 optional.toArray() // []
 
@@ -58,7 +58,7 @@ print(object.someprop1, object.someprop2) // Example 1
 
 ### Optional
 ```swift
-val optional: Int? = nil
+let optional: Int? = nil
 optional.or(3) // 3
 optional.isNil() // true
 ```
@@ -81,7 +81,7 @@ optional.isNil() // true
 "  dsf   ".isNotBlank() // true
 
 // Optional
-val optional: String? = nil
+let optional: String? = nil
 optional.orEmpty() // ""
 optional.isNilOrBlank() // true
 ```
