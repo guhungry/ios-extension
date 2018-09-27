@@ -55,3 +55,10 @@ let object = SomeObject().apply {
 }
 print(object.someprop1, object.someprop2) // Example 1
 ```
+
+### Optional
+```swift
+val optional: Int? = nil
+optional.or(3)
+optional.isNil()
+```
