@@ -46,3 +46,12 @@ optional.isNilOrEmpty()
 optional.toArray()
 
 ```
+
+### Kotlinize
+```swift
+let object = SomeObject().apply {
+    $0.someprop1 = "Example"
+    $0.someprop2 = 1
+}
+print(object.someprop1, object.someprop2) // Example 1
+```
