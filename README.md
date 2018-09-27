@@ -8,7 +8,41 @@ Swift extension for Foundation or UIKit
 
 ## Download
 Install using CocoaPods, add dependency in `Podfile`:
-```
+```ruby
 pod 'WCExtensions', '~> 0.0.0'
 ```
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/WCExtensions.svg?style=flat)](https://cocoapods.org/pods/WCExtensions)
+
+## Examples
+
+### Import library
+```swift
+import WCExtensions
+```
+
+# Collection
+```swift
+// Get Element
+[1, 3, 5].getOrNil(4)
+[1, 3, 5].getOr(4, else: 15)
+
+// Loop With Index
+[1, 3, 5].forEachIndexed { index, item in ... }
+[1, 3, 5].firstIndexed { index, item in ... }
+[1, 3, 5].mapIndexed { index, item in ... }
+[1, 3, 5].filterIndexed { index, item in ... }
+[1, 3, 5].reduceIndexed(initial: 0) { accmulator, index, item in ... }
+
+// Validation
+[1, 3, 5].all { item in ... }
+[1, 3, 5].allIndexed { index, item in ... }
+[1, 3, 5].any { item in ... }
+[1, 3, 5].anyIndexed { index, item in ... }
+[1, 3, 5].isNotEmpty
+
+// Optional
+val optional: [Int]? = nil
+optional.isNilOrEmpty()
+optional.toArray()
+
+```
