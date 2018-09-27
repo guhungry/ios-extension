@@ -23,8 +23,8 @@ import WCExtensions
 # Collection
 ```swift
 // Get Element
-[1, 3, 5].getOrNil(4)
-[1, 3, 5].getOr(4, else: 15)
+[1, 3, 5].getOrNil(4) // nil
+[1, 3, 5].getOr(4, else: 15) // 15
 
 // Loop With Index
 [1, 3, 5].forEachIndexed { index, item in ... }
@@ -38,12 +38,12 @@ import WCExtensions
 [1, 3, 5].allIndexed { index, item in ... }
 [1, 3, 5].any { item in ... }
 [1, 3, 5].anyIndexed { index, item in ... }
-[1, 3, 5].isNotEmpty
+[1, 3, 5].isNotEmpty // true
 
 // Optional
 val optional: [Int]? = nil
-optional.isNilOrEmpty()
-optional.toArray()
+optional.isNilOrEmpty() // true
+optional.toArray() // []
 
 ```
 
@@ -59,6 +59,29 @@ print(object.someprop1, object.someprop2) // Example 1
 ### Optional
 ```swift
 val optional: Int? = nil
-optional.or(3)
-optional.isNil()
+optional.or(3) // 3
+optional.isNil() // true
+```
+
+### String
+```swift
+// Substring
+"01🤐345"[1...3] // 1🤐3
+"01🤐345"[1..<3] // 1🤐
+
+// Conversion
+"44".toInt() // 44
+"invalid".toInt(or: 6) // 6
+
+// Format
+"%@ %d %f".format(args: "test", 1, 5.0) // test 1 5.000000
+
+// Validation
+"     ".isBlank() // true
+"  dsf   ".isNotBlank() // true
+
+// Optional
+val optional: String? = nil
+optional.orEmpty() // ""
+optional.isNilOrBlank() // true
 ```
