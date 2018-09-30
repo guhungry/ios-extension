@@ -10,7 +10,7 @@ import XCTest
 import Hamcrest
 @testable import WCExtensions
 
-class CollectionValidateExtensionTest: XCTestCase {
+class CollectionValidateExtensionTests: XCTestCase {
     /////////
     /// any()
     /////////
