@@ -24,26 +24,23 @@ public extension UIImage {
     }
     
     /// Resize image to specified size
-    /// - Parameter size: width and size of new image
+    /// - Parameter size: width and height of new image
     /// - Returns: Resized image
     public func resize(size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        var newImage: UIImage
         
         if #available(iOS 10.0, *) {
-            let renderFormat = UIGraphicsImageRendererFormat.default()
-            renderFormat.opaque = false
-            let renderer = UIGraphicsImageRenderer(size: size, format: renderFormat)
-            newImage = renderer.image { _ in
-                self.draw(in: rect)
+            let renderFormat = UIGraphicsImageRendererFormat.default().apply {
+                $0.opaque = false
             }
+            let renderer = UIGraphicsImageRenderer(size: size, format: renderFormat)
+            return renderer.image { _ in self.draw(in: rect) }
         } else {
             UIGraphicsBeginImageContextWithOptions(size, true, 0)
             self.draw(in: rect)
-            newImage = UIGraphicsGetImageFromCurrentImageContext()!
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
+            return newImage
         }
-        
-        return newImage
     }
 }
