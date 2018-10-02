@@ -70,6 +70,15 @@ public extension Collection {
         return false
     }
 
+    public func none(_ predicate: (Element) -> Bool) -> Bool {
+        for element in self {
+            if (predicate(element)) {
+                return false
+            }
+        }
+        return true
+    }
+
     public func allIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
         for element in enumerated() {
             if (!predicate(element.offset, element.element)) {
@@ -86,6 +95,15 @@ public extension Collection {
             }
         }
         return false
+    }
+
+    public func noneIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
+        for element in enumerated() {
+            if (predicate(element.offset, element.element)) {
+                return false
+            }
+        }
+        return true
     }
     
     public var isNotEmpty: Bool {

@@ -12,6 +12,49 @@ import Hamcrest
 
 class CollectionValidateExtensionTests: XCTestCase {
     /////////
+    /// none()
+    /////////
+    func testNone_WhenEmpty_ShouldReturnTrue() {
+        assertThat([].none { false }, equalTo(true))
+        assertThat([].none { true }, equalTo(true))
+    }
+
+    func testNone_WhenPredicateAllFalse_ShouldReturnTrue() {
+        assertThat([0, 3, 6].none { _ in false }, equalTo(true))
+        assertThat([0, 3, 6].none { $0 == 5 }, equalTo(true))
+        assertThat([0].none { $0 == 5 }, equalTo(true))
+    }
+
+    func testNone_WhenPredicateSomeTrue_ShouldReturnFalse() {
+        assertThat([0, 3, 6, 5].none { $0 == 5 }, equalTo(false))
+        assertThat([3, 5, 2, 3].none { $0 == 5 }, equalTo(false))
+        assertThat([5, 1, 2, 3].none { $0 == 5 }, equalTo(false))
+        assertThat([5, 1, 2, 3].none { _ in true }, equalTo(false))
+    }
+
+    ////////////////
+    /// noneIndexed()
+    ////////////////
+    func testNoneIndexed_WhenEmpty_ShouldReturnTrue() {
+        assertThat([].noneIndexed { _, _ in false }, equalTo(true))
+        assertThat([].noneIndexed { _, _ in true }, equalTo(true))
+    }
+
+    func testNoneIndexed_WhenPredicateAllFalse_ShouldReturnTrue() {
+        assertThat([0, 3, 6].noneIndexed { _, _ in false }, equalTo(true))
+        assertThat([0, 3, 6].noneIndexed { index, value in value == 5 }, equalTo(true))
+        assertThat([0].noneIndexed { index, value in value == 5 }, equalTo(true))
+    }
+
+    func testNoneIndexed_WhenPredicateSomeTrue_ShouldReturnFalse() {
+        assertThat([0, 3, 6, 5].noneIndexed { index, value in value == 5 }, equalTo(false))
+        assertThat([3, 5, 2, 3].noneIndexed { index, value in value == 5 }, equalTo(false))
+        assertThat([5, 1, 2, 3].noneIndexed { index, value in value == 5 }, equalTo(false))
+        assertThat([5, 1, 2, 3].noneIndexed { index, value in index > -1 }, equalTo(false))
+        assertThat([5, 1, 2, 3].noneIndexed { _, _ in true }, equalTo(false))
+    }
+
+    /////////
     /// any()
     /////////
     func testAny_WhenEmpty_ShouldReturnFalse() {
@@ -20,7 +63,7 @@ class CollectionValidateExtensionTests: XCTestCase {
     }
 
     func testAny_WhenPredicateAllFalse_ShouldReturnFalse() {
-        assertThat([0, 3, 6].any { _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].any { _ in false }, equalTo(false))
         assertThat([0, 3, 6].any { $0 == 5 }, equalTo(false))
         assertThat([0].any { $0 == 5 }, equalTo(false))
     }
@@ -29,19 +72,19 @@ class CollectionValidateExtensionTests: XCTestCase {
         assertThat([0, 3, 6, 5].any { $0 == 5 }, equalTo(true))
         assertThat([3, 5, 2, 3].any { $0 == 5 }, equalTo(true))
         assertThat([5, 1, 2, 3].any { $0 == 5 }, equalTo(true))
-        assertThat([5, 1, 2, 3].any { _ in return true }, equalTo(true))
+        assertThat([5, 1, 2, 3].any { _ in true }, equalTo(true))
     }
 
     ////////////////
     /// anyIndexed()
     ////////////////
     func testAnyIndexed_WhenEmpty_ShouldReturnFalse() {
-        assertThat([].anyIndexed { _, _ in return false }, equalTo(false))
-        assertThat([].anyIndexed { _, _ in return true }, equalTo(false))
+        assertThat([].anyIndexed { _, _ in false }, equalTo(false))
+        assertThat([].anyIndexed { _, _ in true }, equalTo(false))
     }
 
     func testAnyIndexed_WhenPredicateAllFalse_ShouldReturnFalse() {
-        assertThat([0, 3, 6].anyIndexed { _, _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].anyIndexed { _, _ in false }, equalTo(false))
         assertThat([0, 3, 6].anyIndexed { index, value in value == 5 }, equalTo(false))
         assertThat([0].anyIndexed { index, value in value == 5 }, equalTo(false))
     }
@@ -51,7 +94,7 @@ class CollectionValidateExtensionTests: XCTestCase {
         assertThat([3, 5, 2, 3].anyIndexed { index, value in value == 5 }, equalTo(true))
         assertThat([5, 1, 2, 3].anyIndexed { index, value in value == 5 }, equalTo(true))
         assertThat([5, 1, 2, 3].anyIndexed { index, value in index > -1 }, equalTo(true))
-        assertThat([5, 1, 2, 3].anyIndexed { _, _ in return true }, equalTo(true))
+        assertThat([5, 1, 2, 3].anyIndexed { _, _ in true }, equalTo(true))
     }
 
     /////////
@@ -63,7 +106,7 @@ class CollectionValidateExtensionTests: XCTestCase {
     }
 
     func testAll_WhenPredicateAllFalse_ShouldReturnFalse() {
-        assertThat([0, 3, 6].all { _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].all { _ in false }, equalTo(false))
         assertThat([0, 3, 6].all { $0 == 5 }, equalTo(false))
         assertThat([0].all { $0 == 5 }, equalTo(false))
     }
@@ -85,12 +128,12 @@ class CollectionValidateExtensionTests: XCTestCase {
     /// allIndexed()
     ////////////////
     func testAllIndexed_WhenEmpty_ShouldReturnFalse() {
-        assertThat([].allIndexed { _, _ in return false }, equalTo(true))
-        assertThat([].allIndexed { _, _ in return true }, equalTo(true))
+        assertThat([].allIndexed { _, _ in false }, equalTo(true))
+        assertThat([].allIndexed { _, _ in true }, equalTo(true))
     }
 
     func testAllIndexed_WhenPredicateAllFalse_ShouldReturnFalse() {
-        assertThat([0, 3, 6].allIndexed { _, _ in return false }, equalTo(false))
+        assertThat([0, 3, 6].allIndexed { _, _ in false }, equalTo(false))
         assertThat([0, 3, 6].allIndexed { index, value in index == 5 }, equalTo(false))
         assertThat([0].allIndexed { index, value in value == 5 }, equalTo(false))
     }
