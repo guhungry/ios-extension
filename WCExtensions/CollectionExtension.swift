@@ -8,15 +8,15 @@
 
 import Foundation
 
-public extension Collection where Index == Int {
-    public func getOrNil(_ position: Int) -> Element?  {
-        guard position < count else { return nil }
-        return self[position]
+public extension Collection {
+    public func getOrNil(_ index: Index) -> Element?  {
+        guard indices.contains(index) else { return nil }
+        return self[index]
     }
 
-    public func getOr(_ position: Int, else defaultValue: Element) -> Element  {
-        guard position < count else { return defaultValue }
-        return self[position]
+    public func getOr(_ index: Index, else defaultValue: Element) -> Element  {
+        guard indices.contains(index) else { return defaultValue }
+        return self[index]
     }
 }
 
