@@ -6,16 +6,31 @@
 import Foundation
 
 public extension String {
-    public subscript (bounds: CountableClosedRange<Int>) -> String {
+    public subscript (bounds: ClosedRange<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[start...end])
     }
 
-    public subscript (bounds: CountableRange<Int>) -> String {
+    public subscript (bounds: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[start..<end])
+    }
+    
+    public subscript (bounds: PartialRangeFrom<Int>) -> String {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        return String(self[start...])
+    }
+    
+    public subscript (bounds: PartialRangeUpTo<Int>) -> String {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[..<end])
+    }
+    
+    public subscript (bounds: PartialRangeThrough<Int>) -> String {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return String(self[...end])
     }
 }
 

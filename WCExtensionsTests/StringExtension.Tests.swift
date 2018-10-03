@@ -13,12 +13,24 @@ import Hamcrest
 class StringExtensionTests: XCTestCase {
     let sut = "EEBBEECOOL"
     
-    func testSubscriptionClosedRange_WhenBEECOOLAt3_5_ShouldEqualToBee() {
+    func testSubscriptionClosedRange_WhenBEECOOLAt3_5_ShouldEqualToBEE() {
         assertThat(sut[3...5], equalTo("BEE"))
     }
     
-    func testSubscriptionRange_WhenBEECOOLAt3_6_ShouldEqualToBee() {
+    func testSubscriptionRange_WhenBEECOOLAt3_c6_ShouldEqualToBEE() {
         assertThat(sut[3..<6], equalTo("BEE"))
+    }
+    
+    func testSubscriptionRange_WhenBEECOOLAtFrom3_ShouldEqualToBEECOOL() {
+        assertThat(sut[3...], equalTo("BEECOOL"))
+    }
+    
+    func testSubscriptionRange_WhenBEECOOLAtUpto4_ShouldEqualToEEBB() {
+        assertThat(sut[..<4], equalTo("EEBB"))
+    }
+    
+    func testSubscriptionRange_WhenBEECOOLAtThrough4_ShouldEqualToEEBBE() {
+        assertThat(sut[...4], equalTo("EEBBE"))
     }
 }
 
