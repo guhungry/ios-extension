@@ -10,13 +10,11 @@ import Foundation
 
 public extension Collection {
     public func getOrNil(_ index: Index) -> Element?  {
-        guard indices.contains(index) else { return nil }
-        return self[index]
+        return indices.contains(index) ? self[index] : nil
     }
 
     public func getOr(_ index: Index, else defaultValue: Element) -> Element  {
-        guard indices.contains(index) else { return defaultValue }
-        return self[index]
+        return indices.contains(index) ? self[index] : defaultValue
     }
 }
 
