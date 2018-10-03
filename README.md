@@ -20,7 +20,7 @@ pod 'WCExtensions', '~> 0.0.0'
 import WCExtensions
 ```
 
-# Collection
+### Collection
 ```swift
 // Get Element
 [1, 3, 5].getOrNil(4) // nil
