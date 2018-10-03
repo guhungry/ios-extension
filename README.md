@@ -38,6 +38,8 @@ import WCExtensions
 [1, 3, 5].allIndexed { index, item in ... }
 [1, 3, 5].any { item in ... }
 [1, 3, 5].anyIndexed { index, item in ... }
+[1, 3, 5].none { item in ... }
+[1, 3, 5].noneIndexed { index, item in ... }
 [1, 3, 5].isNotEmpty // true
 
 // Optional
