@@ -15,3 +15,9 @@ public extension KotlinApply {
 }
 
 extension NSObject : KotlinApply {}
+
+public extension NSObjectProtocol {
+    public var className: String {
+        return String(describing: Self.self)
+    }
+}

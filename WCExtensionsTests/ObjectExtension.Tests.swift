@@ -27,6 +27,12 @@ class ObjectExtensionTests: XCTestCase {
         assertThat(sut.value, equalTo("555"))
         assertThat(sut.apply { _ in }, sameInstance(sut))
     }
+    
+    func testClassName_WhenClassTestObject_ShouldBeTestObject() {
+        sut = TestObject()
+        
+        assertThat(sut.className, equalTo("TestObject"))
+    }
 }
 
 fileprivate class TestObject : NSObject {
