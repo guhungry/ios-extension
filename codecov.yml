@@ -5,5 +5,6 @@ codecov:
 coverage:
   ignore:
   - Pods/.*
+  - *Tests/
   - .*Tests.m
   - .*Tests.swift
