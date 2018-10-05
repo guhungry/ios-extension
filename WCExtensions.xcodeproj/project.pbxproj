@@ -150,12 +150,12 @@
 		7FD964A9213D0F8B00B7EFC4 /* WCExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				CCD785762167C09F001923EC /* Resources */,
 				CCD7856F216682E0001923EC /* UIKit */,
-				7F410369213D4DFF0073EF6C /* Images */,
 				7F41036E213D52AA0073EF6C /* Wrappers */,
 				7F689654213E3E87008566A1 /* CollectionExtension.Tests.swift */,
-				CC294A0B21540BFD00A33C99 /* CollectionValidateExtension.Tests.swift */,
 				CCBA40B621418D3F009A610A /* CollectionOptionalExtension.Tests.swift */,
+				CC294A0B21540BFD00A33C99 /* CollectionValidateExtension.Tests.swift */,
 				5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */,
 				7F689656213E604F008566A1 /* OptionalExtension.Tests.swift */,
 				5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */,
@@ -193,12 +193,28 @@
 		CCD7856F216682E0001923EC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CCD7857021668318001923EC /* TestView.swift */,
-				CCD7857221668325001923EC /* TestView.xib */,
 				7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */,
 				CCD7857421668421001923EC /* UIViewExtension.Tests.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CCD785762167C09F001923EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F410369213D4DFF0073EF6C /* Images */,
+				CCD785772167C0BB001923EC /* Views */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCD785772167C0BB001923EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCD7857021668318001923EC /* TestView.swift */,
+				CCD7857221668325001923EC /* TestView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D0E01F4ADC70F923A8DB2CC5 /* Pods */ = {
