@@ -35,8 +35,11 @@ public extension String {
 }
 
 public extension String {
-    public func format(args: CVarArg...) -> String {
-        return String(format: self, arguments: args)
+    public func format(_ arguments: CVarArg...) -> String {
+        return format(arguments: arguments)
+    }
+    public func format(arguments: [CVarArg]) -> String {
+        return String(format: self, arguments: arguments)
     }
 }
 

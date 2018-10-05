@@ -37,8 +37,12 @@ class StringExtensionTests: XCTestCase {
 class StringFormatExtensionTests: XCTestCase {
     var sut: String!
     
-    func testFormat_ShouldFormatCorrectly() {
-        assertThat("%@ %d %f".format(args: "bee", 3, 2.0), equalTo("bee 3 2.000000"))
+    func testFormat_WithVarArgs_ShouldFormatCorrectly() {
+        assertThat("%@ %d %f".format("bee", 3, 2.0), equalTo("bee 3 2.000000"))
+    }
+
+    func testFormat_WithArray_ShouldFormatCorrectly() {
+        assertThat("%@ %d %f".format(arguments: ["bee", 3, 2.0]), equalTo("bee 3 2.000000"))
     }
 }
 

@@ -79,7 +79,8 @@ optional.isNil() // true
 "invalid".toInt(or: 6) // 6
 
 // Format
-"%@ %d %f".format(args: "test", 1, 5.0) // test 1 5.000000
+"%@ %d %f".format("test", 1, 5.0) // test 1 5.000000
+"%@ %d %f".format(arguments: ["arguments", 5, 1.0]) // arguments 5 1.000000
 
 // Validation
 "     ".isBlank() // true
