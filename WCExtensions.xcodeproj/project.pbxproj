@@ -142,7 +142,6 @@
 				5946AD80BFCB29A9B28A3925 /* ObjectExtension.swift */,
 				5946AE65CA1B55D936E1E822 /* OptionalExtension.swift */,
 				7FD964B6213D10A200B7EFC4 /* StringExtension.swift */,
-				7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */,
 				7FD964A0213D0F8B00B7EFC4 /* Info.plist */,
 			);
 			path = WCExtensions;
@@ -160,7 +159,6 @@
 				5946A24955429DA797484E87 /* ObjectExtension.Tests.swift */,
 				7F689656213E604F008566A1 /* OptionalExtension.Tests.swift */,
 				5946A57F7F9D3D5D5584EDB4 /* StringExtension.Tests.swift */,
-				7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */,
 				7FD964AC213D0F8B00B7EFC4 /* Info.plist */,
 			);
 			path = WCExtensionsTests;
@@ -186,6 +184,7 @@
 		CCD7856C21667C1D001923EC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7FD964B7213D10A200B7EFC4 /* UIImageExtension.swift */,
 				CCD7856D21667C3B001923EC /* UIViewExtension.swift */,
 			);
 			path = UIKit;
@@ -196,6 +195,7 @@
 			children = (
 				CCD7857021668318001923EC /* TestView.swift */,
 				CCD7857221668325001923EC /* TestView.xib */,
+				7F410367213D4C200073EF6C /* UIImageExtension.Tests.swift */,
 				CCD7857421668421001923EC /* UIViewExtension.Tests.swift */,
 			);
 			path = UIKit;
