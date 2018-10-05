@@ -31,6 +31,8 @@ import WCExtensions
 [1, 3, 5].firstIndexed { index, item in ... }
 [1, 3, 5].mapIndexed { index, item in ... }
 [1, 3, 5].filterIndexed { index, item in ... }
+[1, 3, 5].filterNot { item in ... }
+[1, 3, 5].filterIndexedNot { index, item in ... }
 [1, 3, 5].reduceIndexed(initial: 0) { accmulator, index, item in ... }
 
 // Validation

@@ -37,6 +37,14 @@ public extension Collection {
     public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter(predicate)
     }
+    
+    public func filterNot(_ predicate: (Element) -> Bool) -> [Element] {
+        return filter { !predicate($0) }
+    }
+    
+    public func filterIndexedNot(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
+        return enumerated().filter { index, element in !predicate(index, element) }
+    }
 
     public func reduceIndexed<Result>(initial: Result, reducer: (Result, Int, Element) -> Result) -> Result {
         return enumerated().reduce(initial, { acc, element -> Result in

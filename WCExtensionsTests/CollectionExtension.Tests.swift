@@ -105,6 +105,59 @@ class CollectionExtension: XCTestCase {
         assertThat(item.element, equalTo(6))
     }
     
+    func testFilterNot_ShouldFilterCorrrectly() {
+        sut = [2, 4, 6, 8, 10]
+        
+        assertThat(sut.filterNot { _ in true }, equalTo([]))
+        assertThat(sut.filterNot { $0 >= 8 }, equalTo([2, 4, 6]))
+        assertThat(sut.filterNot { _ in false }, equalTo([2, 4, 6, 8, 10]))
+    }
+    
+    func testFilterIndexedNot_WhenAllTrue_ShouldEmpty() {
+        sut = [2, 4, 6, 8, 10]
+        
+        let actual = sut.filterIndexedNot { _, _ in true }
+        assertThat(actual, hasCount(0))
+    }
+    
+    func testFilterIndexedNot_WhenSomeTrue_ShouldReturnCorrectly() {
+        sut = [2, 4, 6, 8, 10]
+        
+        let actual = sut.filterIndexedNot { index, it in it >= 8 }
+        assertThat(actual, hasCount(3))
+        var item = actual[0]
+        assertThat(item.offset, equalTo(0))
+        assertThat(item.element, equalTo(2))
+        item = actual[1]
+        assertThat(item.offset, equalTo(1))
+        assertThat(item.element, equalTo(4))
+        item = actual[2]
+        assertThat(item.offset, equalTo(2))
+        assertThat(item.element, equalTo(6))
+    }
+    
+    func testFilterIndexedNot_WhenAllFalse_ShouldReturnAllItem() {
+        sut = [2, 4, 6, 8, 10]
+        
+        let actual = sut.filterIndexedNot { _, _ in false }
+        assertThat(actual, hasCount(5))
+        var item = actual[0]
+        assertThat(item.offset, equalTo(0))
+        assertThat(item.element, equalTo(2))
+        item = actual[1]
+        assertThat(item.offset, equalTo(1))
+        assertThat(item.element, equalTo(4))
+        item = actual[2]
+        assertThat(item.offset, equalTo(2))
+        assertThat(item.element, equalTo(6))
+        item = actual[3]
+        assertThat(item.offset, equalTo(3))
+        assertThat(item.element, equalTo(8))
+        item = actual[4]
+        assertThat(item.offset, equalTo(4))
+        assertThat(item.element, equalTo(10))
+    }
+    
     func testReduceIndexed_ShouldLoopWithCorrectValue() {
         sut = [0, 2, 4, 6]
         
