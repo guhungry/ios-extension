@@ -16,7 +16,7 @@ public extension Collection {
     public func getOr(_ index: Index, else defaultValue: Element) -> Element  {
         return indices.contains(index) ? self[index] : defaultValue
     }
-    
+
     public func count(_ predicate: (Element) -> Bool) -> Int {
         var result: Int = 0
         forEach { if (predicate($0)) { result += 1 } }
@@ -31,7 +31,7 @@ public extension Collection {
     public func forEachIndexed(_ action: (Int, Element) -> Void) {
         enumerated().forEach(action)
     }
-    
+
     public func mapIndexed<R>(_ transform: (Int, Element) -> R) -> [R] {
         return enumerated().map(transform)
     }
@@ -39,21 +39,21 @@ public extension Collection {
     public func firstIndexed(_ predicate: (Int, Element) -> Bool) -> (offset: Int, element: Element)? {
         return enumerated().first(where: predicate)
     }
-    
+
     public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter(predicate)
     }
-    
+
     public func filterNot(_ predicate: (Element) -> Bool) -> [Element] {
         return filter { !predicate($0) }
     }
-    
+
     public func filterIndexedNot(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter { index, element in !predicate(index, element) }
     }
 
-    public func reduceIndexed<Result>(initial: Result, reducer: (Result, Int, Element) -> Result) -> Result {
-        return enumerated().reduce(initial, { acc, element -> Result in
+    public func reduceIndexed<R>(initial: R, reducer: (R, Int, Element) -> R) -> R {
+        return enumerated().reduce(initial, { acc, element -> R in
             let (offset, element) = element
             return reducer(acc, offset, element)
         })
@@ -72,7 +72,7 @@ public extension Collection {
         }
         return true
     }
-    
+
     public func any(_ predicate: (Element) -> Bool) -> Bool {
         for element in self {
             if (predicate(element)) {
@@ -117,7 +117,7 @@ public extension Collection {
         }
         return true
     }
-    
+
     public var isNotEmpty: Bool {
         return !isEmpty
     }
