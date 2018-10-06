@@ -12,6 +12,10 @@ public extension KotlinApply {
         block(self)
         return self
     }
+
+    func `let`<R>(_ block: (Self) -> R) -> R {
+        return block(self)
+    }
 }
 
 extension NSObject : KotlinApply {}

@@ -12,10 +12,10 @@ import Hamcrest
 
 class ObjectExtensionTests: XCTestCase {
     fileprivate var sut: TestObject!
-    
+
     override func tearDown() {
         sut = nil
-        
+
         super.tearDown()
     }
 
@@ -27,14 +27,22 @@ class ObjectExtensionTests: XCTestCase {
         assertThat(sut.value, equalTo("555"))
         assertThat(sut.apply { _ in }, sameInstance(sut))
     }
-    
+
+    func testLet_WhenReturnNewValue_ShouldBeNewValue() {
+        let actual = TestObject().let { (it) -> String in
+            return "NewValue" + it.value
+        }
+
+        assertThat(actual, equalTo("NewValue235"))
+    }
+
     func testClassName_WhenClassTestObject_ShouldBeTestObject() {
         sut = TestObject()
-        
+
         assertThat(sut.className, equalTo("TestObject"))
     }
 }
 
 fileprivate class TestObject : NSObject {
-    fileprivate var value: String?
+    fileprivate var value: String = "235"
 }

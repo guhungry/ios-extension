@@ -58,6 +58,11 @@ let object = SomeObject().apply {
     $0.someprop2 = 1
 }
 print(object.someprop1, object.someprop2) // Example 1
+
+let value = object.let {
+    return $0.someprop2 + 2
+}
+print(object.someprop2, value) // 1 3
 ```
 
 ### Optional
