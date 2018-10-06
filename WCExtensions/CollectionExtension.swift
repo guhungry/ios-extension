@@ -55,6 +55,12 @@ public extension Collection {
     }
 }
 
+public extension Collection where Element: OptionalType {
+    public func filterNotNil() -> [Element.Wrapped] {
+        return compactMap { $0.map { $0 } }
+    }
+}
+
 ////////////
 /// Validate
 ////////////

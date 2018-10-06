@@ -165,6 +165,11 @@ class CollectionExtension: XCTestCase {
         assertThat(item.element, equalTo(10))
     }
     
+    func testFilterNotNil_ShouldRemoveNil() {
+        assertThat([nil, "nil", nil].filterNotNil(), equalTo(["nil"]))
+        assertThat([1, nil, 2, nil, 3].filterNotNil(), equalTo([1, 2, 3]))
+    }
+    
     func testReduceIndexed_ShouldLoopWithCorrectValue() {
         sut = [0, 2, 4, 6]
         
