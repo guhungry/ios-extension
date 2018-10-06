@@ -9,7 +9,7 @@ Swift extension for Foundation or UIKit
 ## Download
 Install using CocoaPods, add dependency in `Podfile`:
 ```ruby
-pod 'WCExtensions', '~> 0.0.0'
+pod 'WCExtensions', '~> 0.1.0'
 ```
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/WCExtensions.svg?style=flat)](https://cocoapods.org/pods/WCExtensions)
 
