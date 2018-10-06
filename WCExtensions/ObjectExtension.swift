@@ -6,8 +6,8 @@
 import Foundation
 
 /// Kotlinize
-public protocol KotlinApply {}
-public extension KotlinApply {
+public protocol KotlinScopeFunctions {}
+public extension KotlinScopeFunctions {
     func apply(_ block: (Self) -> Void) -> Self {
         block(self)
         return self
@@ -18,7 +18,7 @@ public extension KotlinApply {
     }
 }
 
-extension NSObject : KotlinApply {}
+extension NSObject : KotlinScopeFunctions {}
 
 public extension NSObjectProtocol {
     public var className: String {
