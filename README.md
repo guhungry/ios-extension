@@ -34,6 +34,7 @@ import WCExtensions
 [1, 3, 5].filterIndexed { index, item in ... }
 [1, 3, 5].filterNot { item in ... }
 [1, 3, 5].filterIndexedNot { index, item in ... }
+[1, nil, 5].filterNotNil() // [1, 5]
 [1, 3, 5].reduceIndexed(initial: 0) { accmulator, index, item in ... }
 
 // Validation
