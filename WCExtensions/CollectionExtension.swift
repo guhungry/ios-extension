@@ -47,7 +47,7 @@ public extension Collection {
     }
 
     public func filterIndexedNot(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
-        return enumerated().filter { index, element in !predicate(index, element) }
+        return enumerated().filter { index, it in !predicate(index, it) }
     }
 
     public func reduceIndexed<R>(initial: R, reducer: (R, Int, Element) -> R) -> R {
@@ -60,8 +60,8 @@ public extension Collection {
 ////////////
 public extension Collection {
     public func all(_ predicate: (Element) -> Bool) -> Bool {
-        for element in self {
-            if (!predicate(element)) {
+        for it in self {
+            if (!predicate(it)) {
                 return false
             }
         }
@@ -69,8 +69,8 @@ public extension Collection {
     }
 
     public func any(_ predicate: (Element) -> Bool) -> Bool {
-        for element in self {
-            if (predicate(element)) {
+        for it in self {
+            if (predicate(it)) {
                 return true
             }
         }
@@ -78,8 +78,8 @@ public extension Collection {
     }
 
     public func none(_ predicate: (Element) -> Bool) -> Bool {
-        for element in self {
-            if (predicate(element)) {
+        for it in self {
+            if (predicate(it)) {
                 return false
             }
         }
@@ -87,8 +87,8 @@ public extension Collection {
     }
 
     public func allIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
-        for element in enumerated() {
-            if (!predicate(element.offset, element.element)) {
+        for it in enumerated() {
+            if (!predicate(it.offset, it.element)) {
                 return false
             }
         }
@@ -96,8 +96,8 @@ public extension Collection {
     }
 
     public func anyIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
-        for element in enumerated() {
-            if (predicate(element.offset, element.element)) {
+        for it in enumerated() {
+            if (predicate(it.offset, it.element)) {
                 return true
             }
         }
@@ -105,8 +105,8 @@ public extension Collection {
     }
 
     public func noneIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
-        for element in enumerated() {
-            if (predicate(element.offset, element.element)) {
+        for it in enumerated() {
+            if (predicate(it.offset, it.element)) {
                 return false
             }
         }
