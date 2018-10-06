@@ -51,10 +51,10 @@ public extension Collection {
     }
 
     public func reduceIndexed<R>(initial: R, reducer: (R, Int, Element) -> R) -> R {
-        return enumerated().reduce(initial, { acc, element -> R in
+        return enumerated().reduce(initial) { acc, element in
             let (offset, element) = element
             return reducer(acc, offset, element)
-        })
+        }
     }
 }
 
