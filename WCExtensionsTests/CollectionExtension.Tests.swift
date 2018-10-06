@@ -58,6 +58,13 @@ class CollectionExtension: XCTestCase {
         
         assertThat(actual, equalTo([0, 2, 4, 6]))
     }
+    
+    func testCount_ShouldReturnCorrectCountMatchPredicate() {
+        assertThat(sut.count { _ in true }, equalTo(4))
+        assertThat(sut.count { $0 % 2 == 0 }, equalTo(2))
+        assertThat(sut.count { $0 > 2 }, equalTo(1))
+        assertThat(sut.count { $0 > 10 }, equalTo(0))
+    }
 
     func testFirstIndexed_ShouldReturnCorrectPair() {
         sut = [0, 2, 4, 6]

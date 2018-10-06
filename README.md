@@ -25,6 +25,7 @@ import WCExtensions
 // Get Element
 [1, 3, 5].getOrNil(4) // nil
 [1, 3, 5].getOr(4, else: 15) // 15
+[1, 2, 3, 4, 5].count { $0 > 3 } // 2
 
 // Loop With Index
 [1, 3, 5].forEachIndexed { index, item in ... }

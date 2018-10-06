@@ -16,6 +16,12 @@ public extension Collection {
     public func getOr(_ index: Index, else defaultValue: Element) -> Element  {
         return indices.contains(index) ? self[index] : defaultValue
     }
+    
+    public func count(_ predicate: (Element) -> Bool) -> Int {
+        var result: Int = 0
+        forEach { if (predicate($0)) { result += 1 } }
+        return result
+    }
 }
 
 ////////
