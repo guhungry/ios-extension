@@ -18,11 +18,7 @@ public extension Collection {
     }
 
     public func count(_ predicate: (Element) -> Bool) -> Int {
-        var result: Int = 0
-        forEach { if (predicate($0)) {
-            result += 1
-        }}
-        return result
+        return reduce(0) { acc, it in predicate(it) ? acc + 1 : acc }
     }
 }
 
