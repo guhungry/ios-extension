@@ -17,6 +17,6 @@ public class Regex {
     }
 
     public func matches(_ string: String) -> [NSTextCheckingResult] {
-        return regex?.matches(in: string, options: [], range: NSMakeRange(0, string.count)) ?? []
+        return regex?.matches(in: string, range: NSMakeRange(0, string.count)) ?? []
     }
 }
