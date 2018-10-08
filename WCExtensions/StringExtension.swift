@@ -38,6 +38,7 @@ public extension String {
     public func format(_ arguments: CVarArg...) -> String {
         return format(arguments: arguments)
     }
+
     public func format(arguments: [CVarArg]) -> String {
         return String(format: self, arguments: arguments)
     }
@@ -66,12 +67,21 @@ public extension String {
 }
 
 public extension String {
+    // toInt()
     public func toInt() -> Int? {
         return Int(self)
     }
     
-    
     public func toInt(or: Int) -> Int {
         return toInt() ?? or
+    }
+
+    // toDouble()
+    public func toDouble() -> Double? {
+        return Double(self)
+    }
+
+    public func toDouble(or: Double) -> Double {
+        return toDouble() ?? or
     }
 }

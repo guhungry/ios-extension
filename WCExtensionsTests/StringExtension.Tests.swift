@@ -47,24 +47,36 @@ class StringFormatExtensionTests: XCTestCase {
 }
 
 class StringToExtensionTests : XCTestCase {
-    var sut: String!
-    
     func testToInt_WhenIs123_ShouldReturn123() {
-        sut = "123"
-        
-        assertThat(sut.toInt(), equalTo(123))
+        assertThat("123".toInt(), equalTo(123))
+    }
+
+    func testToInt_WhenIsInvalid_ShouldReturnNil() {
+        assertThat("Invalid".toInt(), equalTo(nil))
     }
     
     func testToIntOr_WhenIs456_ShouldReturn456() {
-        sut = "456"
-        
-        assertThat(sut.toInt(), equalTo(456))
+        assertThat("456".toInt(or: 321), equalTo(456))
     }
-    
+
     func testToIntOr_WhenIsInvalid_ShouldReturnOr() {
-        sut = "Invalid"
-        
-        assertThat(sut.toInt(or: 321), equalTo(321))
+        assertThat("Invalid".toInt(or: 321), equalTo(321))
+    }
+
+    func testToDouble_WhenIs599d15666_ShouldReturn599d15666() {
+        assertThat("599.15666".toDouble(), equalTo(599.15666))
+    }
+
+    func testToDouble_WhenIsInvalid_ShouldReturnNil() {
+        assertThat("Invalid".toDouble(), equalTo(nil))
+    }
+
+    func testToDoubleOr_WhenIs8221d22333_ShouldReturn8221d22333() {
+        assertThat("8221.22333".toDouble(or: 432.111), equalTo(8221.22333))
+    }
+
+    func testToDoubleOr_WhenIsInvalid_ShouldReturnOr() {
+        assertThat("Invalid".toDouble(or: 432.111), equalTo(432.111))
     }
 }
 
