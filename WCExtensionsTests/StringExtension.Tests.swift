@@ -78,6 +78,16 @@ class StringToExtensionTests : XCTestCase {
     func testToDoubleOr_WhenIsInvalid_ShouldReturnOr() {
         assertThat("Invalid".toDouble(or: 432.111), equalTo(432.111))
     }
+
+    func testTrim_ShouldReturnSameValue_WhenNoWhiteSpace() {
+        assertThat("no whitespace".trim(), equalTo("no whitespace"))
+    }
+
+    func testTrim_ShouldReturnRemoveWhiteSpace_WhenHasWhiteSpace() {
+        assertThat("      with left whitespace".trim(), equalTo("with left whitespace"))
+        assertThat("with right whitespace        ".trim(), equalTo("with right whitespace"))
+        assertThat("   with both whitespace        ".trim(), equalTo("with both whitespace"))
+    }
 }
 
 class OptionalStringExtensionTests : XCTestCase {

@@ -86,6 +86,9 @@ optional.isNil() // true
 // Conversion
 "44".toInt() // 44
 "invalid".toInt(or: 6) // 6
+"12.3".toDouble() // 12.3
+"invalid".toInt(or: 4.5) // 4.5
+" with whitespaces ".trim() // with whitespaces
 
 // Format
 "%@ %d %f".format("test", 1, 5.0) // test 1 5.000000

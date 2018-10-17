@@ -84,4 +84,9 @@ public extension String {
     public func toDouble(or: Double) -> Double {
         return toDouble() ?? or
     }
+
+    /// Returns a string having leading and trailing whitespace removed.
+    public func trim() -> String {
+        return trimmingCharacters(in: .whitespaces)
+    }
 }
