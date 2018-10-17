@@ -58,7 +58,7 @@ public extension Optional where Wrapped == String {
 
 public extension String {
     public func isBlank() -> Bool {
-        return trimmingCharacters(in: CharacterSet.whitespaces).isEmpty
+        return trim().isEmpty
     }
 
     public func isNotBlank() -> Bool {
