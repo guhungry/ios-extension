@@ -12,7 +12,7 @@ public extension UIImage {
     /// Resize image to specified maxSize with preserved aspect ratio
     /// - Parameter maxSize: Max image size either width or height
     /// - Returns: Resized image
-    public func resize(maxSize: CGFloat) -> UIImage {
+    func resize(maxSize: CGFloat) -> UIImage {
         return resize(size: resizeSize(maxSize))
     }
     private func resizeSize(_ maxSize: CGFloat) -> CGSize {
@@ -26,7 +26,7 @@ public extension UIImage {
     /// Resize image to specified size
     /// - Parameter size: width and height of new image
     /// - Returns: Resized image
-    public func resize(size: CGSize) -> UIImage {
+    func resize(size: CGSize) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
         if #available(iOS 10.0, *) {

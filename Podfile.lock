@@ -1,16 +1,16 @@
 PODS:
-  - SwiftHamcrest (2.1.0)
+  - SwiftHamcrest (2.2.1)
 
 DEPENDENCIES:
-  - SwiftHamcrest (~> 2.1.0)
+  - SwiftHamcrest (~> 2.2.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - SwiftHamcrest
 
 SPEC CHECKSUMS:
-  SwiftHamcrest: 3a3bd69a9e65dbaffb573eae6760f58caa48d00e
+  SwiftHamcrest: 67454f9c4c7fae8d7a0f82dfd42f8a54a79095b1
 
-PODFILE CHECKSUM: c0a90d2dadd728a3aa8ef5af1890c13ff157a491
+PODFILE CHECKSUM: a315748bc2d99564f73c82863bbf73f3b771f7fe
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

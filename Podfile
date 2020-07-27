@@ -6,8 +6,6 @@ target 'WCExtensions' do
   use_frameworks!
 
   target 'WCExtensionsTests' do
-    inherit! :search_paths
-
-    pod 'SwiftHamcrest', '~> 2.1.0'
+    pod 'SwiftHamcrest', '~> 2.2.1'
   end
 end
