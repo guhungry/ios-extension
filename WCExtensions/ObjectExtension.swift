@@ -21,7 +21,7 @@ public extension KotlinScopeFunctions {
 extension NSObject : KotlinScopeFunctions {}
 
 public extension NSObjectProtocol {
-    public var className: String {
+    var className: String {
         return String(describing: Self.self)
     }
 }

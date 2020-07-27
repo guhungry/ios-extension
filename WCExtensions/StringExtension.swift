@@ -6,87 +6,87 @@
 import Foundation
 
 public extension String {
-    public subscript (bounds: ClosedRange<Int>) -> String {
+    subscript (bounds: ClosedRange<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[start...end])
     }
 
-    public subscript (bounds: Range<Int>) -> String {
+    subscript (bounds: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[start..<end])
     }
     
-    public subscript (bounds: PartialRangeFrom<Int>) -> String {
+    subscript (bounds: PartialRangeFrom<Int>) -> String {
         let start = index(startIndex, offsetBy: bounds.lowerBound)
         return String(self[start...])
     }
     
-    public subscript (bounds: PartialRangeUpTo<Int>) -> String {
+    subscript (bounds: PartialRangeUpTo<Int>) -> String {
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[..<end])
     }
     
-    public subscript (bounds: PartialRangeThrough<Int>) -> String {
+    subscript (bounds: PartialRangeThrough<Int>) -> String {
         let end = index(startIndex, offsetBy: bounds.upperBound)
         return String(self[...end])
     }
 }
 
 public extension String {
-    public func format(_ arguments: CVarArg...) -> String {
+    func format(_ arguments: CVarArg...) -> String {
         return format(arguments: arguments)
     }
 
-    public func format(arguments: [CVarArg]) -> String {
+    func format(arguments: [CVarArg]) -> String {
         return String(format: self, arguments: arguments)
     }
 }
 
 public extension Optional where Wrapped == String {
-    public func isNilOrBlank() -> Bool {
+    func isNilOrBlank() -> Bool {
         return self == nil || self!.isBlank()
     }
 }
 
 public extension Optional where Wrapped == String {
-    public func orEmpty() -> String {
+    func orEmpty() -> String {
         return self ?? ""
     }
 }
 
 public extension String {
-    public func isBlank() -> Bool {
+    func isBlank() -> Bool {
         return trim().isEmpty
     }
 
-    public func isNotBlank() -> Bool {
+    func isNotBlank() -> Bool {
         return !isBlank()
     }
 }
 
 public extension String {
     // toInt()
-    public func toInt() -> Int? {
+    func toInt() -> Int? {
         return Int(self)
     }
     
-    public func toInt(or: Int) -> Int {
+    func toInt(or: Int) -> Int {
         return toInt() ?? or
     }
 
     // toDouble()
-    public func toDouble() -> Double? {
+    func toDouble() -> Double? {
         return Double(self)
     }
 
-    public func toDouble(or: Double) -> Double {
+    func toDouble(or: Double) -> Double {
         return toDouble() ?? or
     }
 
     /// Returns a string having leading and trailing whitespace removed.
-    public func trim() -> String {
+    func trim() -> String {
         return trimmingCharacters(in: .whitespaces)
     }
 }

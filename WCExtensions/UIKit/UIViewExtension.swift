@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIView {
-    public func loadFromNib(_ contentView: () -> UIView) {
+    func loadFromNib(_ contentView: () -> UIView) {
         let this = type(of: self)
         Bundle(for: this).loadNibNamed(String(describing: this), owner: self, options: nil)
         setContentView(contentView())

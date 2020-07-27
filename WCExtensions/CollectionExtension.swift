@@ -9,15 +9,15 @@
 import Foundation
 
 public extension Collection {
-    public func getOrNil(_ index: Index) -> Element?  {
+    func getOrNil(_ index: Index) -> Element?  {
         return indices.contains(index) ? self[index] : nil
     }
 
-    public func getOr(_ index: Index, else defaultValue: Element) -> Element  {
+    func getOr(_ index: Index, else defaultValue: Element) -> Element  {
         return indices.contains(index) ? self[index] : defaultValue
     }
 
-    public func count(_ predicate: (Element) -> Bool) -> Int {
+    func count(_ predicate: (Element) -> Bool) -> Int {
         return reduce(0) { acc, it in predicate(it) ? acc + 1 : acc }
     }
 }
@@ -26,37 +26,37 @@ public extension Collection {
 /// Loop
 ////////
 public extension Collection {
-    public func forEachIndexed(_ action: (Int, Element) -> Void) {
+    func forEachIndexed(_ action: (Int, Element) -> Void) {
         enumerated().forEach(action)
     }
 
-    public func mapIndexed<R>(_ transform: (Int, Element) -> R) -> [R] {
+    func mapIndexed<R>(_ transform: (Int, Element) -> R) -> [R] {
         return enumerated().map(transform)
     }
 
-    public func firstIndexed(_ predicate: (Int, Element) -> Bool) -> (offset: Int, element: Element)? {
+    func firstIndexed(_ predicate: (Int, Element) -> Bool) -> (offset: Int, element: Element)? {
         return enumerated().first(where: predicate)
     }
 
-    public func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
+    func filterIndexed(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter(predicate)
     }
 
-    public func filterNot(_ predicate: (Element) -> Bool) -> [Element] {
+    func filterNot(_ predicate: (Element) -> Bool) -> [Element] {
         return filter { !predicate($0) }
     }
 
-    public func filterIndexedNot(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
+    func filterIndexedNot(_ predicate: (Int, Element) -> Bool) -> [(offset: Int, element: Element)] {
         return enumerated().filter { index, it in !predicate(index, it) }
     }
 
-    public func reduceIndexed<R>(initial: R, reducer: (R, Int, Element) -> R) -> R {
+    func reduceIndexed<R>(initial: R, reducer: (R, Int, Element) -> R) -> R {
         return enumerated().reduce(initial) { acc, it in reducer(acc, it.offset, it.element) }
     }
 }
 
 public extension Collection where Element: OptionalType {
-    public func filterNotNil() -> [Element.Wrapped] {
+    func filterNotNil() -> [Element.Wrapped] {
         return compactMap { $0.map { $0 } }
     }
 }
@@ -65,7 +65,7 @@ public extension Collection where Element: OptionalType {
 /// Validate
 ////////////
 public extension Collection {
-    public func all(_ predicate: (Element) -> Bool) -> Bool {
+    func all(_ predicate: (Element) -> Bool) -> Bool {
         for it in self {
             if (!predicate(it)) {
                 return false
@@ -74,7 +74,7 @@ public extension Collection {
         return true
     }
 
-    public func any(_ predicate: (Element) -> Bool) -> Bool {
+    func any(_ predicate: (Element) -> Bool) -> Bool {
         for it in self {
             if (predicate(it)) {
                 return true
@@ -83,7 +83,7 @@ public extension Collection {
         return false
     }
 
-    public func none(_ predicate: (Element) -> Bool) -> Bool {
+    func none(_ predicate: (Element) -> Bool) -> Bool {
         for it in self {
             if (predicate(it)) {
                 return false
@@ -92,7 +92,7 @@ public extension Collection {
         return true
     }
 
-    public func allIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
+    func allIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
         for it in enumerated() {
             if (!predicate(it.offset, it.element)) {
                 return false
@@ -101,7 +101,7 @@ public extension Collection {
         return true
     }
 
-    public func anyIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
+    func anyIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
         for it in enumerated() {
             if (predicate(it.offset, it.element)) {
                 return true
@@ -110,7 +110,7 @@ public extension Collection {
         return false
     }
 
-    public func noneIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
+    func noneIndexed(_ predicate: (Int, Element) -> Bool) -> Bool {
         for it in enumerated() {
             if (predicate(it.offset, it.element)) {
                 return false
@@ -119,13 +119,13 @@ public extension Collection {
         return true
     }
 
-    public var isNotEmpty: Bool {
+    var isNotEmpty: Bool {
         return !isEmpty
     }
 }
 
 public extension Optional where Wrapped: Collection {
-    public func isNilOrEmpty() -> Bool {
+    func isNilOrEmpty() -> Bool {
         return isNil() || self!.isEmpty
     }
 }
@@ -140,7 +140,7 @@ public extension Collection {
 }
 
 public extension Optional where Wrapped : Collection {
-    public func toArray() -> [Wrapped.Iterator.Element] {
+    func toArray() -> [Wrapped.Iterator.Element] {
         return self?.toArray() ?? []
     }
 }

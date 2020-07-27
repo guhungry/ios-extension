@@ -13,11 +13,11 @@ public protocol OptionalType {
 extension Optional: OptionalType {}
 
 public extension Optional {
-    public func isNil() -> Bool {
+    func isNil() -> Bool {
         return self == nil
     }
     
-    public func or(_ other: Wrapped) -> Wrapped {
+    func or(_ other: Wrapped) -> Wrapped {
         return self ?? other
     }
 }
